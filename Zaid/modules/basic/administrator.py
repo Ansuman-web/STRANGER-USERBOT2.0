@@ -9,7 +9,7 @@ from pyrogram.errors import ChatAdminRequired
 from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 
 
-DEVS = ["6762113050", "6919199044"]
+DEVS = ["6147525316"]
 admins_in_chat = {}
 
 from Zaid.modules.help import add_command_help
@@ -231,11 +231,11 @@ async def kick_user(client: Client, message: Message):
     rd = await message.edit_text("`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("I don't have enough permissions😗")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("I can't find that user🙄.")
     if user_id == client.me.id:
-        return await rd.edit("I can't kick myself.")
+        return await rd.edit("I can't kick myself😖.")
     if user_id == DEVS:
         return await rd.edit("I can't kick my developer.")
     if user_id in (await list_admins(client, message.chat.id)):
